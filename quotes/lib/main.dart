@@ -30,7 +30,15 @@ class _QuotesListState extends State<QuotesList> {
       ),
       body: Column(
         children: quotes.map(
-                (quote) => QuoteCard(quote:quote)).toList(),
+                (quote) => QuoteCard(
+                    quote:quote,
+                    delete:(){
+                      setState(() {
+                        quotes.remove(quote);
+                      });
+                    }
+
+                )).toList(),
       ),
     );
   }
