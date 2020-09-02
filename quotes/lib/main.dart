@@ -19,10 +19,6 @@ class _QuotesListState extends State<QuotesList> {
     Quote(author: "Oscar Wilde", text:'The truth is rarely pure and never simple'),
   ];
 
-  Widget quoteTemplate(quote){
-    return QuoteCard(quote : quote);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +29,8 @@ class _QuotesListState extends State<QuotesList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
+        children: quotes.map(
+                (quote) => QuoteCard(quote:quote)).toList(),
       ),
     );
   }
